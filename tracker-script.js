@@ -8,10 +8,7 @@ var windowWidth = window.innerWidth;
 var windowHeight = window.innerHeight;
 
 function mouseCoordinates(e) {
-    // Capture the event object (mouse movement).
-    // Get X coordinate (distance from left viewport edge) via clientX property.
-    // Take total window width, subtract current coordinate and width of circle.
-    // Do the same for Y coordinate (distance from top viewport edge).
+
     var horizontalPosition = windowWidth - e.clientX - 330;
     var verticalPosition= windowHeight - e.clientY - 5;
 
@@ -52,16 +49,16 @@ function changeColorOnTouch() {
 
 }
 
-// When the mouse moves, run the mouseCoordinates function.
+
 AREA.addEventListener('mousemove', mouseCoordinates, false);
 
-// When the mouse touches the circle, run the changeColorOnTouch function.
+
 CIRCLE.addEventListener('mouseenter', changeColorOnTouch, false);
 SQUARE1.addEventListener('mouseenter', changeColorOnTouch, false);
 SQUARE2.addEventListener('mouseenter', changeColorOnTouch, false);
 MOON.addEventListener('mouseenter', changeColorOnTouch, false);
 
-// When the mouse leaves the circle, remove inline styles with an anonymous function.
+
 CIRCLE.addEventListener('mouseleave', function(){CIRCLE.removeAttribute("style");}, false);
 SQUARE1.addEventListener('mouseleave', function(){SQUARE1.removeAttribute("style");}, false);
 SQUARE2.addEventListener('mouseleave', function(){SQUARE2.removeAttribute("style");}, false);
